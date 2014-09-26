@@ -17,7 +17,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "product price must be positive" do
-  	product = Product.new(title: "Walls",
+  	product = Product.new(title: "Walls of the walls",
   		description: "new walls",
   		image_url: "walls.jpg",
   		article: "555-666")
@@ -56,9 +56,9 @@ class ProductTest < ActiveSupport::TestCase
   		assert new_product(name).invalid?, "#{name} shouldn't be valid"
   	end
   end
-=begin
+
   test "product is not valid without a unique article" do
-  	product = Product.new(title: "Petropah",
+  	product = Product.new(title: "Petropah collection",
   		description: "walls walls walls",
   		price: 1,
   		image_url: "fred.png",
@@ -67,5 +67,14 @@ class ProductTest < ActiveSupport::TestCase
   	assert product.invalid?
   	assert_equal ["has already been taken"], product.errors[:article]
   end
-=end
+
+  test "product title is not valid if less than 10 symbols" do
+  	product = Product.new(title: "Petropah",
+  		description: "walls walls walls",
+  		price: 1,
+  		image_url: "fred.png",
+  		article: products(:ruby).article)
+
+  	assert product.invalid?, "#{product.title} must be more than or equal 10 symbols"
+  end
 end
