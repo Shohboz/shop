@@ -13,3 +13,10 @@ two:
   image_url: MyString
   price: 9.99
   article: MyString
+
+ruby:
+  title: Balls on the Wall
+  description: Lorem Ipsum Walls.
+  image_url: walls.png
+  price: 20.00  
+  article: unknown
