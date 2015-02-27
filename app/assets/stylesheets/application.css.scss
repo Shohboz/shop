@@ -11,46 +11,177 @@
  *= require_self
  *= require_tree .
  */
-#banner {
-	background: #9c9;
-	padding: 10px;
-	border-bottom: 2px solid;
-	font: small-caps 40px/40px "Times New Roman", serif;
-	color: #282;
-	text-align: center;
-	img {
+
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+//@import "bootstrap-sprockets";
+@import "../../../vendor/assets/stylesheets/materialize/materialize.scss";
+//@import "bootstrap";
+
+body {
+	//padding-top: 70px;
+}
+
+$top-header-height: 30px;
+$input-placeholder-color: color("blue-grey", "lighten-4");
+// меню епта
+.userMenu {
+	li {
 		float: left;
 	}
-}
-#notice {
-	color: #000 !important;
-	border: 2px solid red;
-	padding: 1em;
-	margin-bottom: 2em;
-	background-color: #f0f0f0;
-	font: bold smaller sans-serif;
-}
-#columns {
-	background: #141;	
-	#main {
-		margin-left: 17em;
-		padding: 1em;
-		background: white;
+	li a {
+		padding: 0 20px 0 0;
 	}
-	#side {
-		float: left;
-		padding: 1em 2em;
-		width: 13em;
-		background: #141;
-		ul {
-			padding: 0;
-			li {
-				list-style: none;
-				a {
-					color: #bfb;
-					font-size: small;
-				}
-			}
+}
+
+footer.page-footer {
+  background-color: color("cyan", "darken-2");
+  .footer-copyright {
+    //@extend .light;
+    @extend .cyan, .darken-3;
+  }
+}
+
+.navbar-tshop {
+	height: 80px;
+	.container {
+		width: 90%;
+	}
+	.my-header {		
+		position: fixed;
+		height: $top-header-height;
+		nav {
+			@extend .teal, .lighten-1;
+			width: 85%;
+			font-size: 11px;
+			line-height: $top-header-height;
 		}
 	}
+	.main-header {
+		padding-top: $top-header-height;
+		nav {
+			width: 85%;			
+		}
+		nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+			height: 50px;
+			line-height: 50px;
+		}
+		/*
+		li, .side-nav {
+			width: 100%;
+		}
+		*/
+		.input-field {
+    		margin-top: 0;
+    	}
+	}
+
+	// placeholder styles
+	::-webkit-input-placeholder {color: $input-placeholder-color;}
+	::-moz-placeholder          {color: $input-placeholder-color;}/* Firefox 19+ */
+	:-moz-placeholder           {color: $input-placeholder-color;}/* Firefox 18- */
+	:-ms-input-placeholder      {color: $input-placeholder-color;}
+
+	#search::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.5s ease;}
+	#search::-moz-placeholder                {opacity: 1; transition: opacity 0.5s ease;}
+	#search::-moz-placeholder                 {opacity: 1; transition: opacity 0.5s ease;}
+	#search::-ms-input-placeholder            {opacity: 1; transition: opacity 0.5s ease;}
+	#search:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.5s ease;}
+	#search:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.5s ease;}
+	#search:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.5s ease;}
+	#search:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.5s ease;}
+}
+
+
+ul.side-nav.fixed li.logo {
+    line-height: 50px;
+}
+//
+
+.card-image-special {
+	height: 250px;
+
+	.card-title {
+		opacity: 1;
+		font-size: 22px;
+	}
+}
+
+header, main, footer {
+    padding-left: 240px;
+}
+
+ul.side-nav {
+	opacity: 1;
+}
+.card-special {
+	padding-left: 15px;
+    padding-right: 15px;
+}
+.card-image-special span {
+	background-color: $secondary-color;
+}
+ul.side-nav.fixed:hover {
+    //box-shadow: 0 px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.card-special-hover {
+	display: none;
+}
+.card:hover .card-special-hover {
+	display: block;
+}
+
+.call-button {
+	position: fixed;
+	bottom: 100px;
+	right: 50px;
+}
+
+//---
+
+ul.side-nav.fixed li.logo {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
+ul.side-nav.fixed li {
+    line-height: 44px;
+}
+
+
+ul.side-nav.fixed li a {
+    font-size: 13px;
+}
+ul.side-nav.full a, ul.side-nav.fixed a {
+    color: #444;
+    display: block;
+    padding: 0 15px;
+}
+ul.side-nav .collapsible-header {
+    background-color: transparent;
+    border: medium none;
+    height: inherit;
+    line-height: inherit;
+    margin: 0 1rem;
+}
+.bold > a {
+    font-weight: bold;
+}
+
+li.logo {
+	background-color: $primary-color;
+	.brand-logo {
+		font-family: 'Poiret One', cursive;
+		//font-family: 'Cinzel Decorative', cursive;
+		//font-family: 'Hanalei', cursive;
+		//font-family: 'Monofett', cursive;
+		//font-family: 'Londrina Shadow', cursive;
+		font-size: 35px !important;
+		color: #fff !important;
+		//@include longshadow(darken($color, 8% ));
+	}	
+}
+li.logo:hover {
+	background-color: $primary-color !important;
 }

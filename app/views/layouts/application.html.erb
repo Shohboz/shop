@@ -8,24 +8,18 @@
 </head>
 <body class='<%= controller.controller_name %>'>
 
-	<div id="banner">
-		<%= image_tag("logo.png") %>
-		<%= @page_title || "Wall's Store" %>
-	</div>
-	<div id="columns">
-		<div id="side">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Questions</a></li>
-				<li><a href="#">News</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</div>
-	
-		<div id="main">
-			<%= yield %>
-		</div>
-	</div>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Monoton|Megrim|Mystery+Quest|Amarante|Nova+Oval|Monofett|Londrina+Shadow|Hanalei' rel='stylesheet' type='text/css'>
+
+
+
+  <%= render "header" %>
+
+  <%= render "main" %>
+
+  <%= render "footer" %>
+
 
 </body>
 </html>
