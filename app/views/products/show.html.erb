@@ -1,29 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <h4>
+        Анкета продукта
+      </h4>
+    </li>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+    <li class="collection-item">
+      <strong>Title:</strong>
+      <%= @product.title %>
+    </li>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+    <li class="collection-item">
+      <strong>Description:</strong>
+      <%= @product.description %>
+    </li>
 
-<p>
-  <strong>Article:</strong>
-  <%= @product.article %>
-</p>
+    <li class="collection-item">
+      <strong>Image url:</strong>
+      <%= @product.image_url %>
+    </li>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <li class="collection-item">
+      <strong>Price:</strong>
+      <%= @product.price %>
+    </li>
+
+    <li class="collection-item">
+      <strong>Article:</strong>
+      <%= @product.article %>
+    </li>
+  </ul>
+
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+
+</div>

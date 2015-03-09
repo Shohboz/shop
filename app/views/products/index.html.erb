@@ -1,6 +1,7 @@
-<h2>Список продуктов</h2>
-
-<table>
+<div class="container">
+  <h2 class="header">Список продуктов</h2>
+</div>
+<table class="striped">
   <thead>
     <tr>      
       <th>Image url</th>
@@ -13,12 +14,16 @@
 
   <tbody>
     <% @products.each do |product| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td><%= image_tag(product.image_url, class: 'list_image') %></td>
+      <tr>
+        <td><%= image_tag(product.image_url, class: 'list_image circle') %></td>
         <td class="list_description">
           <dl>
-            <dt><%= product.title %></dt>
-            <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
+            <dt>
+              <h5 class="header">
+                <%= product.title %>
+              </h5>
+            </dt>
+            <dd class="truncate"><%= product.description %></dd>
           </dl>
         </td>
         <td><%= product.price %></td>
