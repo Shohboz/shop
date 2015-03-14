@@ -1,43 +1,53 @@
 <div class="container">
-  <h2 class="header">Список продуктов</h2>
-</div>
-<table class="striped">
-  <thead>
-    <tr>      
-      <th>Image url</th>
-      <th>Title & description</th>
-      <th>Price</th>
-      <th>Article</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag(product.image_url, class: 'list_image circle') %></td>
-        <td class="list_description">
-          <dl>
-            <dt>
-              <h5 class="header">
-                <%= product.title %>
-              </h5>
-            </dt>
-            <dd class="truncate"><%= product.description %></dd>
-          </dl>
-        </td>
-        <td><%= product.price %></td>
-        <td><%= product.article %></td>
-        <td class="list_actions">
-          <%= link_to 'Show', product %><br />
-          <%= link_to 'Edit', edit_product_path(product) %><br />
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+  <div class="section">
+    <h5>Список продуктов</h5>
+    <p>Index</p>
+  </div>
+
+  <br>
+
+  <div class="section">
+  <table class="striped">
+    <thead>
+      <tr>      
+        <th>Image</th>
+        <th>Title & description</th>
+        <th>Price</th>
+        <th>Article</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= image_tag(product.image_url, class: 'list_image circle') %></td>
+          <td class="list_description">
+            <dl>
+              <dt>
+                <h5 class="header">
+                  <%= product.title %>
+                </h5>
+              </dt>
+              <dd class="truncate"><%= product.description %></dd>
+            </dl>
+          </td>
+          <td><%= product.price %></td>
+          <td><%= product.article %></td>
+          <td class="list_actions">
+            <%= link_to 'Show', product %><br />
+            <%= link_to 'Edit', edit_product_path(product) %><br />
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Product', new_product_path %>
+  <br>
+
+  <%= link_to 'New Product', new_product_path %>
+
+  </div>
+</div>

@@ -2,29 +2,6 @@
 	<p id="notice"><%= notice %></p>
 <% end %>
 
-<!--div class="row">
-	<% @products.each do |product| %>
-		<div class="col-sm-4 col-lg-4 col-md-4 entry">
-		    <div class="thumbnail">
-		        <%= image_tag(product.image_url) %>
-		        <div class="caption">
-		            <h4 class="pull-right">
-		            	<%= number_to_currency(product.price) %>
-		            </h4>		            
-		            <h4 class="product-title">
-		            	<a href="#">
-		            		<%= product.title %>
-		            	</a>
-		            </h4>
-		            <div class="ellipsis">
-		            	<%= sanitize(product.description) %>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	<% end %>
-</div-->
-
 <div class="row">
 	<% @products.each do |product| %>
 	<div class="card-special col l4 s12">
