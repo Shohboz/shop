@@ -1,5 +1,10 @@
 Store::Application.routes.draw do
-  get "depot/index"
+  resources :line_items
+
+  resources :carts
+
+  get 'depot/index'
+  get 'depot/:id', to: 'depot#show', as: 'depot_show'
   resources :products
 
   root to: 'depot#index', as: 'depot'
