@@ -2,51 +2,84 @@
 
   <p id="notice"><%= notice %></p>
 
-  <ul class="collection with-header">
-    <li class="collection-header">
-      <div class="section">
-        <h5>Анкета продукта</h5>
-        <p>Show</p>
-      </div>
-    </li>
+  <% breadcrumb :depot, @product %>
 
-    <li class="collection-item">
-      <strong>Title:</strong>
-      <%= @product.title %>
-    </li>
-
-    <li class="collection-item">
-      <strong>Description:</strong>
-      <%= @product.description %>
-    </li>
-
-    <li class="collection-item">
-      <strong>Image url:</strong>
-      <%= @product.image_url %>
-    </li>
-
-    <li class="collection-item">
-      <strong>Price:</strong>
-      <%= @product.price %>
-    </li>
-
-    <li class="collection-item">
-      <strong>Article:</strong>
-      <%= @product.article %>
-    </li>
-  </ul>
 
   <div class="row">
-    <div class="col s12 m5">
-      <div class="card-panel teal">
-        <span class="white-text">
-          <%= sanitize @product.description %>
-        </span>
+    <div class="col l8 m8">
+      <div class="col l12 m12">       
+
+        <ul>
+          <li>
+            <!--div class="section"-->
+              <h4>
+                <%= @product.title %>
+              </h4>
+              <p>Код товара для заказа по телефону: 
+                <b>
+                  <text class="red-text"><%= @product.article %></text>
+                </b>
+              </p>
+            <!--/div-->
+          </li>
+        </ul>
+
+      </div>
+      <div class="col l12 m12">
+        <%= image_tag(@product.image_url, class: "materialboxed", width: "400") %>
+      </div>
+    </div>
+    <div class="col l4 m4">
+      <div class="card-panel white">
+        <div style="padding: 0.5rem;">
+          <!--span class="red-text"-->
+          <p>Цена:</p>
+          <h4 class="red-text">
+            <b><%= number_to_currency(@product.price) %></b>
+          </h4>
+
+          <hr>
+          <!--/span-->
+          <p>Количество:</p>
+          <div class="buttons group">
+            <div class="qnt-count">
+              <a class="incr-btn" href="#">-</a>
+              <input id="quantity" class="form-control" type="text" value="2">
+              <a class="incr-btn" href="#">+</a>
+            </div>
+          </div>
+
+          <hr>
+
+          <button class="btn btn-large red waves-effect waves-light" type="submit" name="action">Добавить в корзину      
+          </button>
+
+        </div>
+
       </div>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col l12 m12">
+      
+    </div>
+  </div>
+
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <div class="section">
+        <h5>Информация</h5>
+        <!--p>Show</p-->
+      </div>
+    </li>
+
+    <li class="collection-item">
+      <%= sanitize @product.description %>
+    </li>
+  </ul>
+
   <!--%= link_to 'Back', depot_path %-->
-  <%= link_to 'Back', :back %>
+  <!--%= link_to 'Back', :back %-->
 
 </div>

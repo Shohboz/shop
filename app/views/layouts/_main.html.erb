@@ -1,7 +1,11 @@
 <main>
     <div class="row">
 
-      <%= yield %>
+    	<div class="container" style="margin-top: 10px;">
+    		<%= breadcrumbs separator: " &rsaquo; " %>
+    	</div>
+
+    	<%= yield %>
 
     </div>
 
