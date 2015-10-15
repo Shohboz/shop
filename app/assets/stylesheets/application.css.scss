@@ -114,6 +114,19 @@ ul.side-nav.fixed li.logo {
 	}
 }
 
+main {
+	min-height: 400px;
+	background-color: color("blue-grey", "lighten-5");
+	.row {
+		margin-bottom: auto;
+  		padding-bottom: 20px;
+	}
+}
+
+footer.page-footer {
+	margin-top: auto;
+}
+
 header, main, footer {
     padding-left: 240px;
 }
@@ -195,4 +208,19 @@ li.logo {
 }
 li.logo:hover {
 	background-color: $primary-color !important;
+}
+
+// card
+.qnt-count {
+	border: 1px solid #eaeaea;
+	display: inline-block;
+
+	li {
+		display: table-cell;
+		vertical-align: middle;
+
+		a {
+			display: block;
+		}
+	}
 }

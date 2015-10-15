@@ -41,18 +41,25 @@
           <hr>
           <!--/span-->
           <p>Количество:</p>
-          <div class="buttons group">
-            <div class="qnt-count">
-              <a class="incr-btn" href="#">-</a>
-              <input id="quantity" class="form-control" type="text" value="2">
-              <a class="incr-btn" href="#">+</a>
-            </div>
+          <div class="buttons group row">
+            <ul class="qnt-count col m12">
+              <li class="col m3">
+                <a class="incr-btn" href="#">-</a>
+              </li>
+              <li class="col m6">
+                <input id="quantity" class="form-control" type="text" value="2">
+              </li>
+              <li class="col m3">
+                <a class="incr-btn" href="#">+</a>
+              </li>
+            </ul>
           </div>
 
           <hr>
 
-          <button class="btn btn-large red waves-effect waves-light" type="submit" name="action">Добавить в корзину      
-          </button>
+          <%= link_to 'Добавить в корзину', line_items_path(product_id: @product), class: "btn btn-large red waves-effect waves-light", method: :post %>
+          <!--button class="btn btn-large red waves-effect waves-light" type="submit" name="action">Добавить в корзину      
+          </button-->
 
         </div>
 
