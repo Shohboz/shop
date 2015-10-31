@@ -1,89 +1,74 @@
 <div class="navbar navbar-tshop navbar-fixed megamenu" role="navigation">
 
-    
-      <!--nav-->
-      <div class="my-header">
-
-        <nav>
-
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s6 m6">
-              <div class="left side-nav">
-                <ul class="userMenu">
-                  <li> <a href="#"> <span class="hide-on-small-only">Доставка</span><i class="mdi-action-info-outline hide-on-med-and-up"></i> </a> </li>
-                  <li class="phone-number"> <a  href="callto:+8801680531352"> <span> <i class="mdi-notification-phone-in-talk"></i></span> <span class="hide-on-small-only" style="margin-left:5px"> +7 (911) 824 00 99 </span> </a> </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col l6 s6 m6 no-margin no-padding">
-              <div class="right side-nav">
-                <ul class="userMenu">
-                  <!--li>
-                    <a href="#"><span class="hide-on-small-only"> Мой аккаунт</span> <i class="mdi-action-input hide-on-med-and-up"></i></a>
-                  </li-->
-                  <li>
-                    <a href="#" data-toggle="modal" data-target="#ModalLogin">
-                      <span class="hide-on-small-only">Войти</span>
-                      <i class="mdi-social-person hide-on-med-and-up"></i>
-                    </a>
-                  </li>
-                  <li class="hide-on-small-only">
-                    <a href="#"  data-toggle="modal" data-target="#ModalSignup"> Зарегистрироваться </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+  <div class="my-header">
+    <nav class="nav-wrapper" style="height: 30px; line-height-30px;">
+      <div class="container">
+        <div class="left side-nav">
+          <ul class="userMenu">
+            <li>
+              <a href="#">
+                <span class="hide-on-small-only">Доставка</span>
+                <i class="mdi-action-info-outline hide-on-med-and-up"></i>
+              </a>
+            </li>
+            <li class="phone-number"> <a  href="callto:+8801680531352"> <span> <i class="mdi-notification-phone-in-talk"></i></span> <span class="hide-on-small-only" style="margin-left:5px"> +7 (911) 824 00 99 </span> </a> </li>
+          </ul>
         </div>
-
-      </nav>
-
+        <div class="right side-nav">
+          <ul class="userMenu">
+            <li>
+              <a href="#" data-toggle="modal" data-target="#ModalLogin">
+                <span class="hide-on-small-only">Войти</span>
+                <i class="mdi-social-person hide-on-med-and-up"></i>
+              </a>
+            </li>
+            <li class="hide-on-small-only">
+              <a href="#"  data-toggle="modal" data-target="#ModalSignup"> Зарегистрироваться </a>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+  </div>
 
-    <!--/nav-->
-  
-  <!--/.navbar-top-->
+  <div class="navbar main-header">
+    <nav class="nav-wrapper" style="height: 50px; line-height: 50px;">
+      <div class="container">
+        <ul class="left search-box" style="position: absolute;">
+          <li>
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+              <i class="mdi-navigation-menu"></i>
+            </a>
+          </li>
+          <li>
+            <form>
+              <div class="input-field">
+                <input id="search" type="text" required placeholder=" Поиск по сайту">
+                <label for="search"><i class="mdi-action-search"></i></label>
+              </div>
+            </form>
+          </li>
+        </ul>
+        <ul id="nav-mobile" class="right">
+          <li>
+            <%= link_to @cart, class: "waves-effect waves-light tooltipped", data: { position: "bottom", delay: "50", tooltip: "В корзину" }, style: "height: 50px;"  do %>
+              <i class="fa fa-shopping-cart"></i>
+              <div id="cart-badge">
+                <%= render partial: 'carts/badge', object: @cart %>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    <div class="navbar main-header">
-
-
-      <nav>
-
-        <div class="container">
-          <div class="nav-wrapper">
-            <div class="col s12 m12 l12">
-              
-              <ul class="left side-nav">
-
-                <li>
-                  <form>
-                    <div class="input-field">
-                      <input id="search" type="text" required placeholder=" Найдите обои Вашей мечты!">
-                      <label for="search"><i class="mdi-action-search"></i></label>
-                    </div>
-                  </form>
-                </li>
-
-              </ul>
-
-
-              <ul class="right side-nav">
-                
-                <li>
-                    <a href="#"><i class="medium mdi-action-shopping-cart"></i></a>
-                </li>
-
-              </ul>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </nav>
-    </div>
+  <ul class="side-nav fixed" id="mobile-demo">
+    <%= render "layouts/sidenav" %>
+  </ul>
 
 </div>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+</script>
