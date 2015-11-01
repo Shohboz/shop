@@ -1,18 +1,43 @@
-<h2>Корзина</h2>
+<div id="cart">
+	<h4>Корзина</h4>
+	<br>
+	<table class="bordered collection">
+	<% if cart.line_items.length.zero? %>
+		<tr>
+			<td>
+				Корзина пуста
+			</td>
+		</tr>
+	</table>
 
-<table>
-	<%= render cart.line_items %>
+	<br><br>
 
-	<tr class="total_line">
-		<td colspan="2">Total</td>
-		<td class="total_cell">
-			<%= number_to_currency cart.total_price %>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">Количество товаров в корзине</td>
-		<td><%= cart.total_quantity %></td>
-	</tr>
-</table>
+	<div>
+		<%= link_to 'В каталог', depot_path, class: "btn btn-large waves-effect waves-light" %>
+	</div>
+	
+	<% else %>
+		<thead>
+    	<tr>
+    		<th></th>
+      	<th data-field="title">Товарная позиция</th>
+      	<th data-field="quantity">Количество</th>
+      	<th data-field="price">Цена</th>
+    	</tr>
+    </thead>
+		<%= render cart.line_items %>
+		<tr class="total_line">
+			<td></td>
+			<td></td>
+			<td>Итог</td>
+			<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+		</tr>
+	</table>
 
-<%= button_to 'Empty cart', cart, method: :delete, data: { confirm: 'Вы уверены?' } %>
+	<br><br>
+
+	<%= link_to 'Оформить заказ', "#", class: "red right btn btn-large waves-effect waves-light" %>
+	<% end %>
+</div>
+
+<br><br><br><br>
