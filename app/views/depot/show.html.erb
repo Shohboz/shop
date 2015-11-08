@@ -4,75 +4,53 @@
 
   <% breadcrumb :depot, @product %>
 
+  <%= form_for(@product, method: :post, remote: true, url: line_items_path(product_id: @product)) do |f| %>
 
-  <div class="row">
-    <div class="col l8 m8">
-      <div class="col l12 m12">       
-
-        <ul>
-          <li>
-            <h4>
-              <%= @product.title %>
-            </h4>
-            <p>Код товара для заказа по телефону: 
-              <b>
-                <text class="red-text"><%= @product.article %></text>
-              </b>
-            </p>
-          </li>
-        </ul>
-
-      </div>
-      <div class="col l12 m12 s12">
-        <%= image_tag(@product.image_url, class: "materialboxed", width: "400") %>
-      </div>
-    </div>
-    <div class="col l4 m4 s12">
-      <div class="card-panel white">
-        <div style="padding: 0.5rem;">
-          <label>Цена:</label>
-          <h4 class="red-text card-price">
-            <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
-          </h4>
-
-          <hr>
-
-          <label>Количество:</label>
-          <div class="buttons group row special-qnt">
-            <ul class="qnt-count col m12 s12">
-              <li class="col m3 s3">
-                <a class="incr-btn" href="#">
-                  <i class="fa fa-minus"></i>
-                </a>
-              </li>
-              <li class="col m6 s6">
-                <input id="quantity" class="form-control center-align" type="text" value="2">
-              </li>
-              <li class="col m3 s3">
-                <a class="incr-btn" href="#">
-                  <i class="fa fa-plus"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <hr>
-
-          <div class="center-align">
-            <%= link_to 'Добавить в корзину', line_items_path(product_id: @product), class: "btn btn-large red waves-effect waves-light", method: :post %>
-          </div>
-
+    <div class="row">
+      <div class="col l8 m12 s12">
+        <div class="col l12 m12">
+          <ul>
+            <li>
+              <h4>
+                <%= @product.title %>
+              </h4>
+              <p>Код товара для заказа по телефону: 
+                <b>
+                  <text class="red-text"><%= @product.article %></text>
+                </b>
+              </p>
+            </li>
+          </ul>
         </div>
+        <div class="col l12 m12 s12">
+          <%= image_tag(@product.image_url, class: "materialboxed", width: "400") %>
+        </div>
+      </div>
+      <div class="col l4 m12 s12">
+        <div class="card-panel white">
+          <div style="padding: 0.5rem;">
+            <label>Цена:</label>
+            <h4 class="red-text card-price">
+              <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
+            </h4>
 
+            <hr>
+
+            <label>Количество:</label>
+            <%= number_field_tag :quantity, '1', min: 1,  placeholder: 1, required: 'required', class: 'form-control' %>
+
+            <hr>
+
+            <div class="center-align">
+              <%= link_to 'Добавить в корзину', '#', class: "btn btn-large red waves-effect waves-light btn-submit modal-trigger", onclick: "$('#line_item_add').submit()" %>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col l12 m12">
-      
-    </div>
-  </div>
+    <%= f.submit nil, id: "line_item_add", style: "display: none;" %>
+  <% end %>
 
   <ul class="collection with-header">
     <li class="collection-header">

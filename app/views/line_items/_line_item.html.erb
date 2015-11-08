@@ -1,19 +1,17 @@
 <tr>
 	<td class="table-action center-align">
 		<%= link_to line_item, method: :delete, data: { position: "bottom", delay: "50", tooltip: "Удалить" }, class: "tooltipped waves-effect waves-light"  do %>
-            <i class="fa header fa-times-circle fa-2"></i>
-        <% end %>
-    </td>
+      <i class="fa header fa-times-circle fa-2"></i>
+    <% end %>
+  </td>
 	<td class="collection-item-cart">
 		<div class="collection-item-container">
-			<!-- image_tag(line_item.product.image_attachments.first().image_url.to_s, height: "100", class: "cart-image collection-image-cart") -->
-			<%= image_tag(line_item.product.image_url.to_s, height: "100", class: "cart-image 	collection-image-cart") %>
+			<%= image_tag(line_item.product.image_url.to_s, height: "90", class: "cart-image collection-image-cart") %>
 	    	<span class="title"><%= line_item.product.title %></span>
-	    	<ul>
-	    		<!-- render line_item.line_item_attribute -->
-	    	</ul>
     	</div>
 	</td>
-	<td><%= line_item.quantity %>&times;</td>
+	<td>
+		<%= number_field_tag :quantity, line_item.quantity, min: 1,  placeholder: 1, required: 'required', class: 'center-align quantity form-control' %>
+	</td>
 	<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
 </tr>

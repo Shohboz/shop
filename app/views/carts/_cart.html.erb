@@ -1,11 +1,11 @@
 <div id="cart">
 	<h4>Корзина</h4>
 	<br>
-	<table class="bordered collection">
+	<table class="bordered collection <%= 'collection-unstyled' if cart.line_items.length.zero? %>">
 	<% if cart.line_items.length.zero? %>
 		<tr>
 			<td>
-				Корзина пуста
+				Ваша корзина пуста
 			</td>
 		</tr>
 	</table>
@@ -13,7 +13,7 @@
 	<br><br>
 
 	<div>
-		<%= link_to 'В каталог', depot_path, class: "btn btn-large waves-effect waves-light" %>
+		<%= link_to 'В каталог', depot_path, class: "teal btn btn-large waves-effect waves-light" %>
 	</div>
 	
 	<% else %>

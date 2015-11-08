@@ -2,6 +2,8 @@
 class Product < ActiveRecord::Base
 	has_many :line_items
 
+	attr_accessor :quantity
+
 	before_destroy :ensure_not_referenced_by_any_line_item
 
 	validates :title, :description, :article, :image_url, presence: true
@@ -12,6 +14,14 @@ class Product < ActiveRecord::Base
 		message: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
 	}
 	validates :title, length: {minimum: 10}
+
+	def quantity
+	  @quantity || 1
+	end
+
+	def quantity=(value)
+	  @quantity = value
+	end
 
 	private
 
