@@ -34,12 +34,8 @@
               <%= number_to_currency(@product.price, :precision => (@product.price.round == @product.price) ? 0 : 2) %>
             </h4>
 
-            <hr>
-
             <label>Количество:</label>
             <%= number_field_tag :quantity, '1', min: 1,  placeholder: 1, required: 'required', class: 'form-control' %>
-
-            <hr>
 
             <div class="center-align">
               <%= link_to 'Добавить в корзину', '#', class: "btn btn-large red waves-effect waves-light btn-submit modal-trigger", onclick: "$('#line_item_add').submit()" %>
@@ -64,3 +60,13 @@
     </li>
   </ul>
 </div>
+
+<%= render partial: 'modal' %>
+
+<script type="text/javascript">
+  $(document).on('ready page:load', function() {
+    $('.modal-trigger').on('click', function(){
+      $('#modal-decide-view').openModal();
+    });
+  });
+</script>

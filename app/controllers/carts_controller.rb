@@ -58,6 +58,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to depot_url, notice: 'Ваша корзина пуста.' }
+      format.js
       format.json { head :no_content }
     end
   end

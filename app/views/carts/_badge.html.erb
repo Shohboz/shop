@@ -1,5 +1,5 @@
 <% unless @cart.nil? || @cart.line_items.count.zero? %>
 	<span class="new badge">
-		<%= @cart.line_items.count %>
+		<%= @cart.line_items.count.to_s %>
 	</span>
 <% end %>

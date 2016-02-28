@@ -13,16 +13,14 @@
  */
 
 
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-//@import "bootstrap-sprockets";
 @import "font-awesome";
 @import "../../../vendor/assets/stylesheets/materialize/materialize.scss";
-//@import "bootstrap";
 
 $attributes-color: color("grey", "darken-1");
 $top-header-height: 30px;
 $input-placeholder-color: color("blue-grey", "lighten-4");
 $secondary-color: color("cyan", "darken-2");
+$badge-bg-color: #ee6e73;
 
 .userMenu {
 	li {
@@ -99,11 +97,14 @@ hr {
 
 #cart-badge {
 	span.badge.new {
+		position: absolute;
 		line-height: 20px;
 		min-width: auto;
-		left: 35px;
+		left: 38px;
 		right: auto;
-		top: 5px;
+		top: 4px;
+		font-size: 0.7rem;
+		background-color: $badge-bg-color;
 		
 		&:after {
     		content: "";
@@ -233,7 +234,7 @@ li.logo:hover {
 	background-color: $primary-color !important;
 }
 .card-price {
-	font-weight: 600;
+	font-weight: 400;
 }
 #cart, #order-table {
 	.collection-item-cart {
