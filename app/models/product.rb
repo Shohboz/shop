@@ -1,5 +1,11 @@
 #encoding: utf-8
+
+require 'babosa'
+
 class Product < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :slug_candidates, use: [:slugged, :finders]
+
 	has_many :line_items
 
 	attr_accessor :quantity
@@ -14,6 +20,17 @@ class Product < ActiveRecord::Base
 		message: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
 	}
 	validates :title, length: {minimum: 10}
+
+	def slug_candidates
+		[
+			:title,
+			[:title, :id]
+		]
+	end
+
+	def normalize_friendly_id(text)
+		text.to_s.to_slug.normalize(transliterations: :russian).to_s
+	end
 
 	def quantity
 	  @quantity || 1

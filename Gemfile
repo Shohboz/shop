@@ -11,6 +11,11 @@ gem 'hirb'
 # Gretel is a Ruby on Rails plugin that makes it easy yet flexible to create breadcrumbs.
 gem 'gretel'
 
+# FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record. It lets you create pretty URLs and work with human-friendly strings as if they were numeric ids.
+gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+# Babosa is a library for creating human-friendly identifiers, aka "slugs". It can also be useful for normalizing and sanitizing data.
+gem 'babosa'
+
 # Use SCSS for stylesheets
 #gem 'bootstrap-sass', '~> 3.3.1'
 gem 'sass-rails', '>= 3.2'

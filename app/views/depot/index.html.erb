@@ -6,7 +6,7 @@
 	<% @products.each do |product| %>
 		<div class="card-special col l4 s12 m6">
 			<div class="card">
-				<%= link_to depot_show_path(product.id) do %>
+				<%= link_to depot_show_path(product) do %>
 	        <div class="card-image-special card-image waves-effect waves-block waves-light">
 	        	<%= image_tag(product.image_url) %>
 	          	<span class="card-title">
