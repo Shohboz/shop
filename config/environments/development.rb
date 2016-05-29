@@ -32,4 +32,6 @@ Store::Application.configure do
 
   # Precompile additional assets
   config.assets.precompile += %w( .svg .eot .woff .ttf )
+  # set up the default URL options for the Devise mailer
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

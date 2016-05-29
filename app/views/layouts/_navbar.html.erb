@@ -1,9 +1,9 @@
 <div class="navbar navbar-tshop navbar-fixed megamenu" role="navigation">
 
   <div class="my-header">
-    <nav class="nav-wrapper" style="height: 30px; line-height-30px;">
+    <nav class="nav-wrapper" style="height: 30px; line-height: 30px;">
       <div class="container">
-        <div class="left side-nav">
+        <div class="left side-nav-top">
           <ul class="userMenu">
             <li>
               <a href="#">
@@ -11,20 +11,35 @@
                 <i class="mdi-action-info-outline hide-on-med-and-up"></i>
               </a>
             </li>
-            <li class="phone-number"> <a  href="callto:+8801680531352"> <span> <i class="mdi-notification-phone-in-talk"></i></span> <span class="hide-on-small-only" style="margin-left:5px"> +7 (911) 824 00 99 </span> </a> </li>
-          </ul>
-        </div>
-        <div class="right side-nav">
-          <ul class="userMenu">
-            <li>
-              <a href="#" data-toggle="modal" data-target="#ModalLogin">
-                <span class="hide-on-small-only">Войти</span>
-                <i class="mdi-social-person hide-on-med-and-up"></i>
+            <li class="phone-number">
+              <a href="callto:+8801680531352">
+                <i class="hide-on-med-and-up mdi-notification-phone-in-talk"></i>
+                <i class="hide-on-small-only mdi-notification-phone-in-talk left"></i>
+                <span class="hide-on-small-only">+7 (911) 824 00 99</span>
               </a>
             </li>
-            <li class="hide-on-small-only">
-              <a href="#"  data-toggle="modal" data-target="#ModalSignup"> Зарегистрироваться </a>
-            </li>
+          </ul>
+        </div>
+        <div class="right side-nav-top">
+          <ul class="userMenu">
+            <% if user_signed_in? %>
+              Учетная запись <%= current_user.email %>
+              <%= link_to "Выйти из учетной записи", destroy_user_session_path, :method => :delete %>
+            <% else %>
+              <li>
+                <a href="#" data-toggle="modal" data-target="#ModalLogin">
+                  <i class="mdi-social-person hide-on-med-and-up"></i>
+                  <span class="hide-on-small-only">
+                    <%= link_to "Войти", new_user_session_path %>
+                  </span>
+                </a>
+              </li>
+              <li class="hide-on-small-only">
+                <a href="#"  data-toggle="modal" data-target="#ModalSignup">
+                  <%= link_to "Зарегистрироваться", new_user_registration_path %>
+                </a>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>

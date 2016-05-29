@@ -15,12 +15,16 @@ gem 'gretel'
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 # Babosa is a library for creating human-friendly identifiers, aka "slugs". It can also be useful for normalizing and sanitizing data.
 gem 'babosa'
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'
 
 # Use SCSS for stylesheets
 #gem 'bootstrap-sass', '~> 3.3.1'
 gem 'sass-rails', '>= 3.2'
 gem 'autoprefixer-rails'#, '4.0.2.2'
 gem 'font-awesome-rails'
+# materialize-sass is a Sass powered version of Materialize, a modern responsive front-end framework based on Material Design.
+gem 'materialize-sass'
 
 gem 'tzinfo-data'
 

@@ -1,43 +1,55 @@
-<div id="cart">
-	<h4>Корзина</h4>
-	<br>
-	<table class="bordered collection <%= 'collection-unstyled' if cart.line_items.length.zero? %>">
-	<% if cart.line_items.length.zero? %>
-		<tr>
-			<td>
-				Ваша корзина пуста
-			</td>
-		</tr>
-	</table>
+<!-- <div id="cart" class="list-container">
+  <h2 class="header-list-container header">Корзина</h2> -->
 
-	<br><br>
+<div id="cart" class="collection with-header">
+  <h2 class="header-list-container header collection-header">Корзина</h2>
+  <div class="collection-item">
 
-	<div>
-		<%= link_to 'В каталог', depot_path, class: "teal btn btn-large waves-effect waves-light" %>
-	</div>
-	
-	<% else %>
-		<thead>
-    	<tr>
-    		<th></th>
-      	<th data-field="title">Товарная позиция</th>
-      	<th data-field="quantity">Количество</th>
-      	<th data-field="price">Цена</th>
-    	</tr>
-    </thead>
-		<%= render cart.line_items %>
-		<tr class="total_line">
-			<td></td>
-			<td></td>
-			<td>Итог</td>
-			<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-		</tr>
-	</table>
+    <table class="bordered collection <%= 'collection-unstyled' if cart.line_items.length.zero? %>">
+    <% if cart.line_items.length.zero? %>
+      <tr>
+        <td>
+          Ваша корзина пуста
+        </td>
+      </tr>
+    </table>
 
-	<br><br>
+    <br />
+    <br />
 
-	<%= link_to 'Оформить заказ', "#", class: "red right btn btn-large waves-effect waves-light" %>
-	<% end %>
+    <div>
+      <%= link_to 'В каталог', depot_path, class: "teal btn btn-large waves-effect waves-light" %>
+    </div>
+    
+    <% else %>
+      <thead>
+        <tr>
+          <th></th>
+          <th data-field="title">Товарная позиция</th>
+          <th data-field="quantity">Количество</th>
+          <th data-field="price">Цена</th>
+        </tr>
+      </thead>
+
+      <%= render cart.line_items %>
+
+      <tr class="total_line">
+        <td></td>
+        <td></td>
+        <td>Итог</td>
+        <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <div class="actions">
+      <%= link_to 'Оформить заказ', "#", class: "red btn btn-large waves-effect waves-light" %>
+    </div>
+    <% end %>
+  </div>
 </div>
 
-<br><br><br><br>
+<br />
+<br />

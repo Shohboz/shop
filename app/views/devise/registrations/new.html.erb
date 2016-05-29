@@ -1,0 +1,36 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <div class="collection with-header">  
+    <h2 class="header-list-container header collection-header">Зарегистрироваться</h2>
+    <div class="collection-item">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label "Электронная почта" %><br />
+          <%= f.email_field :email, type: "email", class: "validate", autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Пароль" %><br />
+          <%= f.password_field :password, autocomplete: "off", pattern: ".{8,}", class: "validate", title: "Минимум 8 символов" %>
+        </div>
+
+        <div class="field">
+          <%= f.label "Подтверждение пароля" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <br />
+
+        <div class="actions">
+          <%= link_to 'Регистрация', '', class: "btn btn-large red accent-2 waves-effect waves-light", onclick: "$('form').submit()" %>
+          <%= f.submit nil, style: "display: none;" %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- render "devise/shared/links" -->
+  </div>
+</div>
