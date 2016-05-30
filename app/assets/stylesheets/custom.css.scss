@@ -11,7 +11,7 @@ $top-header-height: 30px;
 $input-placeholder-color: color("blue-grey", "lighten-4");
 
 @import "materialize/components/variables";
-
+@import "mixins";
 
 .list-container {
   background-color: #fff;
@@ -228,16 +228,19 @@ ul.side-nav .collapsible-header {
 
 li.logo {
   background-color: $primary-color;
+  overflow: hidden;
   .brand-logo {
     font-family: 'Poiret One', cursive;
-    //font-family: 'Cinzel Decorative', cursive;
-    //font-family: 'Hanalei', cursive;
-    //font-family: 'Monofett', cursive;
-    //font-family: 'Londrina Shadow', cursive;
+    // font-family: 'Cinzel Decorative', cursive;
+    // font-family: 'Londrina Shadow', cursive;
     font-size: 33px !important;
     color: #fff !important;
-    //@include longshadow(darken($color, 8% ));
-  } 
+    @include long-shadow(text, darken($primary-color, 4), 40, true);
+    &:hover {
+      @include long-shadow(text, darken($primary-color, 10), 50, true);
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
 }
 li.logo:hover {
   background-color: $primary-color !important;
