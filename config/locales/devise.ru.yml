@@ -1,5 +1,43 @@
 ru:
+  errors:
+    messages:
+      expired: "устарела. Пожалуйста, запросите новую"
+      not_found: "не найдена"
+      already_confirmed: "уже подтверждена. Пожалуйста, попробуйте войти в систему"
+      not_locked: "не заблокирована"
+      not_saved:
+        one: "%{resource}: сохранение не удалось из-за %{count} ошибки"
+        few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
+        many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
+        other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
   devise:
+    failure:
+      already_authenticated: "Вы уже вошли в систему."
+      unauthenticated: "Вам необходимо войти в систему или зарегистрироваться."
+      unconfirmed: "Вы должны подтвердить вашу учётную запись."
+      locked: "Ваша учётная запись заблокирована."
+      invalid: "Неверный адрес e-mail или пароль."
+      invalid_token: "Неверный ключ аутентификации."
+      timeout: "Ваш сеанс закончился. Пожалуйста, войдите в систему снова."
+      inactive: "Ваша учётная запись ещё не активирована."
+    sessions:
+      signed_in: "Вход в систему выполнен."
+      signed_out: "Выход из системы выполнен."
+      new:
+        sign_in: Войти
+    passwords:
+      send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по восстановлению вашего пароля."
+      updated: "Ваш пароль изменён. Теперь вы вошли в систему."
+      updated_not_active: 'Ваш пароль изменен.'
+      send_paranoid_instructions: "Если ваш адрес e-mail есть в нашей базе данных, то в течение нескольких минут вы получите письмо с инструкциями по восстановлению вашего пароля."
+      new:
+        forgot_your_password: Забыли пароль?
+        send_me_reset_password_instructions: Выслать новый пароль
+      edit:
+        change_your_password: Изменить пароль
+        new_password: Новый пароль
+        confirm_new_password: Повторите новый пароль
+        change_my_password: Изменить мой пароль        
     confirmations:
       new:
         resend_confirmation_instructions: Выслать повторно письмо с активацией
@@ -22,16 +60,15 @@ ru:
         instruction: ! 'Нажмите ссылку для активации учетной записи:'
         message: Ваша учетная запись была заблокирована в связи с превышением лимита неудачных попыток входа.
         subject: Инструкции для разблокировки учетной записи
-    passwords:
-      new:
-        forgot_your_password: Забыли пароль?
-        send_me_reset_password_instructions: Выслать новый пароль
-      edit:
-        change_your_password: Изменить пароль
-        new_password: Новый пароль
-        confirm_new_password: Повторите новый пароль
-        change_my_password: Изменить мой пароль        
     registrations:
+      signed_up: "Добро пожаловать! Вы успешно зарегистрировались."
+      inactive_signed_up: "Добро пожаловать! Вы успешно зарегистрировались. Но пока вы не можете войти в систему, т.к. ваша учётная запись %{reason}."
+      updated: "Ваша учётная запись изменена."
+      destroyed: "До свидания! Ваша учётная запись удалена. Надеемся снова увидеть вас."
+      reasons:
+        inactive: 'неактивна'
+        unconfirmed: 'не подтверждена'
+        locked: 'заблокирована'
       edit:
         are_you_sure: Вы уверены?
         cancel_my_account: Удалить учетную запись
@@ -40,9 +77,6 @@ ru:
         we_need_your_current_password_to_confirm_your_changes: введите текущий пароль для подтверждения изменений
       new:
         sign_up: Регистрация
-    sessions:
-      new:
-        sign_in: Войти
     shared:
       links:
         didn_t_receive_confirmation_instructions: Не получили подтверждение?

@@ -7,6 +7,7 @@
           <ul class="userMenu">
             <li>
               <a href="#">
+                <i class="mdi-action-info-outline hide-on-small-only left"></i>
                 <span class="hide-on-small-only">Доставка</span>
                 <i class="mdi-action-info-outline hide-on-med-and-up"></i>
               </a>
@@ -23,8 +24,19 @@
         <div class="right side-nav-top">
           <ul class="userMenu">
             <% if user_signed_in? %>
-              Учетная запись <%= current_user.email %>
-              <%= link_to "Выйти из учетной записи", destroy_user_session_path, :method => :delete %>
+              <ul id="account" class="dropdown-content">
+                <li><a href="#!">Профиль</a></li>
+                <li class="divider"></li>
+                <li><%= link_to "Выйти", destroy_user_session_path, :method => :delete %></li>
+              </ul>
+
+              <li>
+                <a class="dropdown-button" href="#!" data-activates="account">Профиль
+                  <i class="mdi-social-person left"></i>
+                  <i class="material-icons right fa fa-chevron-down"></i>
+                </a>
+              </li>
+              
             <% else %>
               <li>
                 <a href="#" data-toggle="modal" data-target="#ModalLogin">
