@@ -6,7 +6,8 @@
   </div>
   <div class="modal-content">
     <h4 class="header center-align">Товар добавлен в корзину!</h4>
-    <br>
+
+    <br />
 
     <div class="container" style="margin-top: 20px;">
       <div class="row">
@@ -21,7 +22,7 @@
           <div style="padding: 0.5rem;">
             <ul>
               <li>
-                <h5>
+                <h5 class="truncate">
                   <%= @product.title %>
                 </h5>
                 <% unless @product.article.to_s.empty? %>
@@ -35,16 +36,16 @@
 
             <label>Цена:</label>
 
-            <h5 class="price" id="total_price"></h5>
+            <h5 class="price red-text" id="total_price"></h5>
           </div>
         </div>
       </div>
     </div>
       
     <div class="row">
-      <%= link_to 'В каталог', depot_path, style: "margin-left: 4%;", class: "col m3 l3 btn btn-large cyan lighten-1 waves-effect waves-light" %>
-      <%= link_to 'Оформить заказ', '#', class: "col m3 l3 offset-l1 btn btn-large cyan lighten-1 waves-effect waves-light" %>
-      <%= link_to 'В корзину', @cart, class: "col m3 l3 offset-l1 btn btn-large cyan lighten-1 waves-effect waves-light" %>
+      <%= link_to 'В каталог', depot_path, style: "margin-left: 4%;", class: "col m3 l3 btn btn-large waves-effect waves-light" %>
+      <%= link_to 'Оформить заказ', '#', class: "col m3 l3 offset-l1 btn btn-large waves-effect waves-light" %>
+      <%= link_to 'В корзину', @cart, class: "col m3 l3 offset-l1 btn btn-large waves-effect waves-light" %>
     </div>
   </div>
 </div>
