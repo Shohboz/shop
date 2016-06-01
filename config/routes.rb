@@ -2,6 +2,7 @@ Store::Application.routes.draw do
   devise_for :users
   resources :line_items
   resources :carts
+  resources :users
 
   get 'depot/index'
   get 'depot/:id', to: 'depot#show', as: 'depot_show'

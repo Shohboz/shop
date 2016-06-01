@@ -25,12 +25,15 @@
           <ul class="userMenu">
             <% if user_signed_in? %>
               <ul id="account" class="dropdown-content">
-                <li><a href="#!">Мой кабинет</a></li>
+                <li>
+                  <%= link_to "Мой кабинет", edit_user_path(current_user) %>
+                </li>
                 <li class="divider"></li>
                 <li><%= link_to "Выйти", destroy_user_session_path, :method => :delete %></li>
               </ul>
 
               <li>
+                
                 <a class="dropdown-button" href="#!" data-activates="account">Профиль
                   <i class="mdi-social-person left"></i>
                   <i class="material-icons right fa fa-chevron-down"></i>
