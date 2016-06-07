@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'#, '4.0.2'
+gem 'rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -19,12 +19,11 @@ gem 'babosa'
 gem 'devise'
 
 # Use SCSS for stylesheets
-#gem 'bootstrap-sass', '~> 3.3.1'
 gem 'sass-rails', '>= 3.2'
 gem 'autoprefixer-rails'#, '4.0.2.2'
 gem 'font-awesome-rails'
 # materialize-sass is a Sass powered version of Materialize, a modern responsive front-end framework based on Material Design.
-gem 'materialize-sass'
+gem 'materialize-sass', '0.97.5'
 
 gem 'tzinfo-data'
 
