@@ -1,16 +1,18 @@
 <nav>
   <div class="nav-wrapper container">
-    <ul id="nav-mobile" class="hide-on-med-and-down">
+    <ul id="nav-mobile">
       <li class="<%= 'active' if current_page?(personal_orders_path) %>">
-        <%= link_to personal_orders_path, class: "waves-effect waves-light"  do %>
-          <i class="fa fa-shopping-bag"></i>
-          <span class="hide-on-small-only"> Мои заказы</span>
+        <%= link_to personal_orders_path, class: "waves-effect waves-light" do %>
+          <i class="hide-on-med-and-up fa fa-shopping-bag"></i>
+          <i class="hide-on-small-only fa fa-shopping-bag left"></i>
+          <span class="hide-on-small-only">Мои заказы</span>
         <% end %>
       </li>
       <li class="<%= 'active' if current_page?(personal_show_path) %>">
-        <%= link_to personal_show_path, class: "waves-effect waves-light"  do %>
-          <i class="fa fa-pencil-square-o"></i>
-            <span class="hide-on-small-only"> Персональные данные</span>
+        <%= link_to personal_show_path, class: "waves-effect waves-light" do %>
+          <i class="hide-on-med-and-up fa fa-pencil-square-o"></i>
+          <i class="hide-on-small-only fa fa-pencil-square-o left"></i>
+          <span class="hide-on-small-only">Персональные данные</span>
         <% end %>
       </li>
     </ul>
