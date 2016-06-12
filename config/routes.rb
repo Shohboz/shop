@@ -1,4 +1,7 @@
 Store::Application.routes.draw do
+  get 'personal/:id', to: 'personal#show', as: 'personal_show'
+  get 'personal/:id/orders', to: 'personal#orders', as: 'personal_orders'
+
   devise_for :users
   resources :line_items
   resources :carts

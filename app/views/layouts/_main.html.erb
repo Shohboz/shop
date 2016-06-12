@@ -1,6 +1,9 @@
 <main>
   <div class="row">
-
+    <% if params[:controller] == "personal" %>
+      <%= render "personal/navbar" %>
+    <% end %>
+    
   	<div class="container" style="padding-top: 10px;">
   		<%= breadcrumbs separator: " &rsaquo; " %>
   	</div>
