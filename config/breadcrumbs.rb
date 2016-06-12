@@ -15,6 +15,22 @@ crumb :depot do |product|
 	link product.title, product
 end
 
+crumb :payment do
+  link "Доставка", payment_path
+end
+
+crumb :orders do
+  link "Мои заказы", personal_orders_path
+end
+
+crumb :profile do
+  link "Настройки профиля", personal_show_path
+end
+
+crumb :cart do
+  link "Корзина", cart_path
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

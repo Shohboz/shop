@@ -9,6 +9,7 @@ Store::Application.routes.draw do
 
   get 'depot/index'
   get 'depot/:id', to: 'depot#show', as: 'depot_show'
+  get 'payment', to: 'depot#payment', as: 'payment'
   resources :products
 
   root to: 'depot#index', as: 'depot'

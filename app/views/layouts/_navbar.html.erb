@@ -6,11 +6,11 @@
         <div class="left side-nav-top">
           <ul class="userMenu">
             <li>
-              <a href="#">
+              <%= link_to payment_path, class: "waves-effect waves-light"  do %>
                 <i class="mdi-action-info-outline hide-on-small-only left"></i>
                 <span class="hide-on-small-only">Доставка</span>
                 <i class="mdi-action-info-outline hide-on-med-and-up"></i>
-              </a>
+              <% end %>
             </li>
             <li class="phone-number">
               <a href="callto:+8801680531352">
