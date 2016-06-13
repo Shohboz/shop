@@ -37,3 +37,15 @@ nav ul li:hover, nav ul li.active {
   line-height: 50px;
   padding: 14px 16px;
 }
+
+#paginator {
+  width: 240px;
+  margin: 0 auto;
+
+  ul.pagination {
+    height: 30px;
+    .active {
+      color: white;
+    }
+  }
+}

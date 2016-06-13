@@ -1,0 +1,43 @@
+<div class="container">
+  <% breadcrumb :search, @products %>
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+</div>
+
+<div class="row">
+  <p class="flow-text container"><%= "По вашему запросу ничего не найдено" if @products.empty? %></p>
+  <% @products.each do |product| %>
+    <div class="card-special col l4 s12 m6">
+      <div class="card hoverable">
+        <%= link_to depot_show_path(product) do %>
+      <div class="card-image-special card-image waves-effect waves-block waves-light">
+        <%= image_tag(product.image_url) %>
+        <span class="card-title">
+          <%= product.title %>
+        </span>
+      </div>
+      <% end %>
+      <div class="card-content">            
+      <span class="card-title activator grey-text text-darken-4">
+        <%= number_to_currency(product.price, :precision => (product.price.round == product.price) ? 0 : 2) %>
+        <i class="mdi-navigation-more-vert right"></i>
+      </span>
+      </div>
+      <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">
+        <%= product.title %>
+        <i class="mdi-navigation-close right"></i>
+      </span>
+      <blockquote>
+        <p><%= sanitize(product.description) %></p>
+      </blockquote>
+      </div>
+    </div>
+    </div>
+  <% end %>
+</div>
+
+<div id="paginator" class="center-paginator">
+  <%= paginate @products %>
+</div>

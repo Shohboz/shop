@@ -8,6 +8,7 @@ Store::Application.routes.draw do
   resources :users
 
   get 'depot/index'
+  get 'depot/search', to: 'depot#search', as: 'depot_search'
   get 'depot/:id', to: 'depot#show', as: 'depot_show'
   get 'payment', to: 'depot#payment', as: 'payment'
   resources :products

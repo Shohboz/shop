@@ -31,6 +31,10 @@ crumb :cart do
   link "Корзина", cart_path
 end
 
+crumb :search do
+  link "Результат поиска", depot_search_path
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

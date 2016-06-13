@@ -71,12 +71,14 @@
             </a>
           </li>
           <li>
-            <form>
+            <%= form_tag depot_search_path, method: :get, role: "search" do %>
               <div class="input-field">
-                <input id="search" type="text" required placeholder=" Поиск по сайту">
+                <%= text_field_tag :search, params[:search], autocomplete: "off", placeholder: " Поиск по сайту", class: "form-control" %>
+                <!-- <input id="search" type="text" required placeholder=" Поиск по сайту"> -->
                 <label for="search"><i class="mdi-action-search"></i></label>
+                <%= submit_tag "Search", name: nil, style: "display: none;" %>
               </div>
-            </form>
+            <% end %>
           </li>
         </ul>
         <ul id="nav-mobile" class="right">

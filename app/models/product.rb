@@ -3,6 +3,7 @@
 require 'babosa'
 
 class Product < ActiveRecord::Base
+	searchkick
 	extend FriendlyId
 	friendly_id :slug_candidates, use: [:slugged, :finders]
 
@@ -19,7 +20,7 @@ class Product < ActiveRecord::Base
 		with: %r{\.(gif|jpg|png)\Z}i,
 		message: 'URL должен указывать на изображение формата GIF, JPG или PNG.'
 	}
-	validates :title, length: {minimum: 10}
+	validates :title, length: {minimum: 5}
 
 	def slug_candidates
 		[

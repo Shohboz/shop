@@ -17,6 +17,10 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'babosa'
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
+# Intelligent search made easy with Rails and Elasticsearch
+gem 'searchkick'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+gem 'kaminari'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 3.2'

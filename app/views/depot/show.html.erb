@@ -1,7 +1,6 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
-
   <% breadcrumb :depot, @product %>
+  <p id="notice"><%= notice %></p>
 
   <%= form_for(@product, method: :post, remote: true, url: line_items_path(product_id: @product)) do |f| %>
 
